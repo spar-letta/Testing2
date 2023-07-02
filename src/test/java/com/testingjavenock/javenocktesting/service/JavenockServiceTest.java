@@ -74,7 +74,7 @@ public class JavenockServiceTest {
         when(movieRepository.findAll()).thenReturn(movieList);
         List<Movie> returnedList = serviceImpl.findAll();
 
-        assertEquals(2, returnedList.size());
+        assertEquals(3, returnedList.size());
         assertNotNull(returnedList);
     }
 
