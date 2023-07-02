@@ -10,13 +10,7 @@ pipeline {
             steps {
                 sh "mvn test"
             }
-        }
-        stage('Deploy') {
-            steps {
-                sh "mvn package"
-            }
-        }
-        post {
+	  post {
 	        always {
 		        junit(
 			        allowEmptyResults:true,
@@ -25,5 +19,12 @@ pipeline {
 	        }
 
         }
+        }
+        stage('Deploy') {
+            steps {
+                sh "mvn package"
+            }
+        }
+       
     }
 }
